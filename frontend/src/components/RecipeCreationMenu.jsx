@@ -5,7 +5,9 @@ import "./main.css";
 export default function RecipeCreationMenu() {
   const input = useRef("");
   function submit() {
-    console.log(input.current);
+    let result;
+    result = input.current
+    console.log(result);
   }
   function handleTextFieldChange(word) {
     input.current = word;
@@ -24,17 +26,22 @@ export default function RecipeCreationMenu() {
         <div className="angry">
           <TextField
             className="button"
-            label="Write Something"
+            label="Write a title"
             variant="outlined"
-            color="secondary"
+            color="primary"
             onKeyDown={onKeyDown}
             onChange={(event) => handleTextFieldChange(event.target.value)}
           />
         </div>
+    <div>
+
+//gwgweg
+
+    </div>
         <div className="angry">
           <Button
             variant="contained"
-            color="secondary"
+            color="primary"
             className="button"
             onClick={submit}
           >
