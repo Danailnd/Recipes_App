@@ -1,12 +1,13 @@
 import React, { useState, useRef } from "react";
 import { Button, Paper, TextField } from "@material-ui/core";
 import "./main.css";
+import IngredientsCreationMenu from "./IngredientsCreationMenu";
 
 export default function RecipeCreationMenu() {
   const input = useRef("");
   function submit() {
     let result;
-    result = input.current
+    result = input.current;
     console.log(result);
   }
   function handleTextFieldChange(word) {
@@ -33,11 +34,6 @@ export default function RecipeCreationMenu() {
             onChange={(event) => handleTextFieldChange(event.target.value)}
           />
         </div>
-    <div>
-
-//gwgweg
-
-    </div>
         <div className="angry">
           <Button
             variant="contained"
