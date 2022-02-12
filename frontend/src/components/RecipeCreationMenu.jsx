@@ -72,34 +72,6 @@ export default function RecipeCreationMenu() {
   }
   return (
     <>
-      <AppBar
-        style={{ background: "#E4D9FF" }}
-        position="static"
-        className="appBar"
-      >
-        <Toolbar>
-          <LocalDiningIcon
-            style={{ color: "#273469" }}
-            size="large"
-            edge="start"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <EmojiFoodBeverageIcon />
-          </LocalDiningIcon>
-          <Link
-            style={{ color: "#273469" }}
-            className="link"
-            href="/RecipeCreationMenu.jsx"
-            underline="none"
-          >
-            Build-A-Recipe
-          </Link>
-          <Link className="link" href="/LoginMenu.jsx" underline="none">
-            <Button style={{ color: "#273469" }}>Login</Button>
-          </Link>
-        </Toolbar>
-      </AppBar>
       <Paper className="paper" elevation={4}>
         <div>
           <h2 className="header">Create New Recipe</h2>
