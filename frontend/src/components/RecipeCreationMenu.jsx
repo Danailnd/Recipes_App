@@ -2,9 +2,21 @@ import React, { useState, useRef, useEffect } from "react";
 import { Button, Paper, TextField } from "@material-ui/core";
 import "./main.css";
 import Checkbox from "@mui/material/Checkbox";
-
+import Brightness1Icon from "@mui/icons-material/Brightness1";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import CookieIcon from "@mui/icons-material/Cookie";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import CakeIcon from "@mui/icons-material/Cake";
+import CoffeeIcon from "@mui/icons-material/Coffee";
+import EggIcon from "@mui/icons-material/Egg";
+import EggAltIcon from "@mui/icons-material/EggAlt";
+import EmojiFoodBeverageIcon from "@mui/icons-material/EmojiFoodBeverage";
+import FlatwareIcon from "@mui/icons-material/Flatware";
+import LocalDiningIcon from "@mui/icons-material/LocalDining";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Link from "@mui/material/Link";
 
 // import CircleIcon from "@mui/icons-material/Circle";
 
@@ -44,9 +56,10 @@ export default function RecipeCreationMenu() {
   function IngredientsCreationMenu() {
     return counter.map((value, index) => {
       return (
-        <div>
-          <ArrowRightIcon />
+        <div className="myDiv">
+          <CookieIcon />
           <TextField
+            className="textField"
             variant="standard"
             onChange={(event) =>
               handleIngredientsTextfieldChange(event.target.value, index)
@@ -58,13 +71,41 @@ export default function RecipeCreationMenu() {
   }
   return (
     <>
+      <AppBar
+        style={{ background: "#E4D9FF" }}
+        position="static"
+        className="appBar"
+      >
+        <Toolbar>
+          <LocalDiningIcon
+            style={{ color: "#273469" }}
+            size="large"
+            edge="start"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <EmojiFoodBeverageIcon />
+          </LocalDiningIcon>
+          <Link
+            style={{ color: "#273469" }}
+            className="link"
+            href="/RecipeCreationMenu.jsx"
+            underline="none"
+          >
+            Build-A-Recipe
+          </Link>
+          <Link className="link" href="/LoginMenu.jsx" underline="none">
+            <Button style={{ color: "#273469" }}>Login</Button>
+          </Link>
+        </Toolbar>
+      </AppBar>
       <Paper className="paper" elevation={4}>
         <div>
           <h2 className="header">Create New Recipe</h2>
         </div>
-        <div className="angry">
+        <div className="myDiv">
           <TextField
-            className="button"
+            className="textField"
             label="Write a title"
             variant="outlined"
             color="primary"
@@ -73,17 +114,15 @@ export default function RecipeCreationMenu() {
           />
         </div>
         <div>
-          <Paper className="paper2" elevation={4}>
-            <IngredientsCreationMenu />
-            <Button onClick={addIngredient}>
-              <AddCircleOutlineIcon />
-            </Button>
-          </Paper>
+          <IngredientsCreationMenu />
+          <Button onClick={addIngredient}>
+            <AddCircleOutlineIcon />
+          </Button>
         </div>
-        <div className="angry">
+        <div className="myDiv">
           <Button
             variant="contained"
-            color="primary"
+            style={{ background: "#E4D9FF" }}
             className="button"
             onClick={submit}
           >
