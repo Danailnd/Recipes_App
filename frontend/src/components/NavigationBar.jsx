@@ -21,7 +21,7 @@ export default function NavigationBar() {
   return (
     <AppBar
       style={{ background: "#E4D9FF" }}
-      position="static"
+      position="sticky"
       className="appBar"
     >
       <Toolbar>
@@ -34,17 +34,18 @@ export default function NavigationBar() {
         >
           <EmojiFoodBeverageIcon />
         </LocalDiningIcon>
-        <Link
-          style={{ color: "#273469" }}
-          className="link"
-          href="/RecipeCreationMenu.jsx"
-          underline="none"
-        >
+        <Button href="/" style={{ color: "#273469" }}>
           Build-A-Recipe
-        </Link>
-        <Link className="link" href="/LoginMenu.jsx" underline="none">
-          <Button style={{ color: "#273469" }}>Login</Button>
-        </Link>
+        </Button>
+        <Button href="test" style={{ color: "#273469" }}>
+          Bee Movie Script
+        </Button>
+        <Button href="IngredientsList" style={{ color: "#273469" }}>
+          Ingredients
+        </Button>
+        <Button href="Recipes" style={{ color: "#273469" }}>
+          Recipes
+        </Button>
       </Toolbar>
     </AppBar>
   );

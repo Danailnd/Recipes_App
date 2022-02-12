@@ -1,12 +1,14 @@
 * {
+}
+h2 {
   text-align: center;
   font-family: Trebuchet MS;
-  margin: 20px;
+  margin: 10px;
+  margin: auto;
+  width: 50%;
 }
 .paper {
   padding: 50px;
-  margin: auto;
-  width: 50%;
 }
 .button {
   border-radius: 17px;
@@ -22,9 +24,6 @@
 .textField {
   width: 80%;
   height: 80%;
-}
-img {
-  display: inline-block;
 }
 .appBar {
   background-color: purple;
