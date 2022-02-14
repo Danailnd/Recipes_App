@@ -5,12 +5,13 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js --ignore client"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "concurrently": "^7.0.0",
+    "cors": "^2.8.5",
     "express": "^4.17.2"
   },
   "devDependencies": {
