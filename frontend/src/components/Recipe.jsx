@@ -66,7 +66,7 @@ export default function Recipe() {
         {" "}
         {createRecipeCard(
           "Pasta Puttanesca",
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHM_E5TEiRKl2-Dve0fGazvVo1py9-zXJDQw&usqp=CAU",
+          "https://www.twopeasandtheirpod.com/wp-content/uploads/2019/05/Pasta-Primavera-3.jpg",
           ["tomato", "spaghetti", "basil"],
           ["vegan", "gluten", "boiling", "pasta"],
           "#"

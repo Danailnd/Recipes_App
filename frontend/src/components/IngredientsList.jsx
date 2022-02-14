@@ -7,7 +7,8 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 //import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
 import Grid from "@mui/material/Grid";
-import { Paper } from "@material-ui/core";
+import { Paper, Button } from "@material-ui/core";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 export default function IngredientsList() {
   function createIngredientAccordion(groupName, ingredientsNames) {
@@ -75,6 +76,9 @@ export default function IngredientsList() {
         ])}
         {createIngredientAccordion("Muslim", ["Pork", "Alcohol"])}
       </Paper>
+      <Button href="Recipes">
+        <AddCircleOutlineIcon></AddCircleOutlineIcon>
+      </Button>
     </div>
   );
 }
