@@ -76,7 +76,7 @@ export default function IngredientsList() {
         ])}
         {createIngredientAccordion("Muslim", ["Pork", "Alcohol"])}
       </Paper>
-      <Button href="Recipes">
+      <Button href="addIngredient">
         <AddCircleOutlineIcon></AddCircleOutlineIcon>
       </Button>
     </div>

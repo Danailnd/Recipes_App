@@ -1,7 +1,6 @@
 import React from "react";
 import "./main.css";
 import { Paper, Button } from "@material-ui/core";
-import createNewIngredient from "frontend/src/components/addIngredient.jsx";
 import IngredientsList from "./IngredientsList";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";

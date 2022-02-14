@@ -4,6 +4,7 @@ import Test from "./components/test.jsx";
 import NavigationBar from "./components/NavigationBar.jsx";
 import IngredientsList from "./components/IngredientsList.jsx";
 import Recipe from "./components/Recipe.jsx";
+import createNewIngredient from "./components/addIngredient.jsx";
 
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/test" element={<Test />} />
           <Route path="/IngredientsList" element={<IngredientsList />} />
           <Route path="/Recipes" element={<Recipe />} />
+          <Route path="/addIngredient" element={<createNewIngredient />} />
         </Routes>
       </BrowserRouter>
     </>
