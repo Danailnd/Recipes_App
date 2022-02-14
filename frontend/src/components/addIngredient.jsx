@@ -12,7 +12,7 @@ import Chip from "@mui/material/Chip";
 import Autocomplete from "@mui/material/Autocomplete";
 import Stack from "@mui/material/Stack";
 
-export default function createNewIngredient() {
+export default function CreateNewIngredient() {
   return (
     <h4>
       According to all known laws of aviation, there is no way a bee should be

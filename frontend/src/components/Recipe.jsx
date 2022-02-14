@@ -102,6 +102,16 @@ export default function Recipe() {
           "#"
         )}
       </span>
+      <span>
+        {" "}
+        {createRecipeCard(
+          "Bacon Salad",
+          "https://www.cookingclassy.com/wp-content/uploads/2019/11/best-salad-7.jpg",
+          ["bacon", "lettuce", "croutons"],
+          ["meat", "gluten", "lunch"],
+          "#"
+        )}
+      </span>
     </span>
   );
 }
