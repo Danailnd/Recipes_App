@@ -3,6 +3,9 @@
   font-family: Trebuchet MS;
   margin: 5px;
 }
+body {
+  background-color: #a29bb6;
+}
 .paper {
   padding: 5px;
   margin: auto;
@@ -27,6 +30,13 @@ span {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
+}
+.myAccordion {
+  border-radius: 10px;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  padding: 10px;
 }
 .recipeListPage {
   background-color: #a29bb6;
