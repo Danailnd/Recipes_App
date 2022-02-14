@@ -38,6 +38,7 @@ export default function NavigationBar() {
         <Button href="test">Bee Movie Script</Button>
         <Button href="IngredientsList">Ingredients</Button>
         <Button href="Recipes">Recipes</Button>
+        <Button href="addIngredient">Add an Ingredient</Button>
       </Toolbar>
     </AppBar>
   );
