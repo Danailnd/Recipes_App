@@ -21,6 +21,7 @@ export default function CreateNewIngredient() {
     { name: "Versatile" },
     { name: "Othe words that start with V" },
   ];
+
   function ingredientForm(type, ingredientName) {
     return (
       <span className="myNewIngredientPage">
