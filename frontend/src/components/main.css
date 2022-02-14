@@ -1,12 +1,41 @@
-* {
+*:not(img):not(.mySpan) {
   text-align: center;
   font-family: Trebuchet MS;
-  margin: 20px;
+  margin: 5px;
 }
 .paper {
-  padding: 50px;
+  padding: 5px;
   margin: auto;
+  margin-top: 0px;
   width: 50%;
+}
+.card {
+  padding: 5px;
+  min-width: 450px;
+  max-width: 450px;
+}
+.mySpan {
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+}
+span {
+  margin: 0px;
+  padding: 0px;
+  max-width: 100%;
+  max-height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+.recipeListPage {
+  background-color: #a29bb6;
+  margin: 0px;
+  padding: 0px;
+  max-height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
 }
 .button {
   border-radius: 17px;
@@ -24,7 +53,14 @@
   height: 80%;
 }
 img {
+  border: solid 2px #a29bb6;
+  border-radius: 10px;
   display: inline-block;
+  padding: 0px;
+  max-width: 85%;
+  max-height: auto;
+  margin: auto;
+  width: 50%;
 }
 .appBar {
   background-color: purple;

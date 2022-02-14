@@ -34,18 +34,10 @@ export default function NavigationBar() {
         >
           <EmojiFoodBeverageIcon />
         </LocalDiningIcon>
-        <Button href="/" style={{ color: "#273469" }}>
-          Build-A-Recipe
-        </Button>
-        <Button href="test" style={{ color: "#273469" }}>
-          Bee Movie Script
-        </Button>
-        <Button href="IngredientsList" style={{ color: "#273469" }}>
-          Ingredients
-        </Button>
-        <Button href="Recipes" style={{ color: "#273469" }}>
-          Recipes
-        </Button>
+        <Button href="/">Build-A-Recipe</Button>
+        <Button href="test">Bee Movie Script</Button>
+        <Button href="IngredientsList">Ingredients</Button>
+        <Button href="Recipes">Recipes</Button>
       </Toolbar>
     </AppBar>
   );

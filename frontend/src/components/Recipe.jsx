@@ -1,57 +1,107 @@
 import "./main.css";
-import React, { useState, useRef, useEffect } from "react";
-import { Button, Paper, TextField } from "@material-ui/core";
-import "./main.css";
-import Checkbox from "@mui/material/Checkbox";
-import Brightness1Icon from "@mui/icons-material/Brightness1";
-import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import CookieIcon from "@mui/icons-material/Cookie";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import CakeIcon from "@mui/icons-material/Cake";
-import CoffeeIcon from "@mui/icons-material/Coffee";
-import EggIcon from "@mui/icons-material/Egg";
-import EggAltIcon from "@mui/icons-material/EggAlt";
-import EmojiFoodBeverageIcon from "@mui/icons-material/EmojiFoodBeverage";
-import FlatwareIcon from "@mui/icons-material/Flatware";
-import LocalDiningIcon from "@mui/icons-material/LocalDining";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Link from "@mui/material/Link";
+import React from "react";
+import { Button } from "@material-ui/core";
 import Chip from "@mui/material/Chip";
 import Card from "@mui/material/Card";
-import { height } from "@mui/system";
+import CardHeader from "@mui/material/CardHeader";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
 
 export default function Recipe() {
-  var title = "Cupcakes";
-  var image =
-    "https://prettysimplesweet.com/wp-content/uploads/2020/07/funfetti-cupcakes-recipe.jpg";
-  var ingredients = ["love", "patience", "sugar"];
-  var character = ["tasty", "perfect", "easy", "food", "vegan"];
+  function createRecipeCard(title, image, ingredients, character, whereTo) {
+    return (
+      <div className="recipeListPage">
+        <Card sx={{ bgcolor: "#e9e2fd" }} className="card" elevation={4}>
+          <CardHeader title={title}></CardHeader>
+          <CardMedia
+            component="img"
+            image={image}
+            height="300px"
+            width="auto"
+            alt="An image of the desired recipe result."
+          />
+          <CardContent>Ingredients: </CardContent>
+          {ingredients.map((value) => {
+            return (
+              <span className="mySpan">
+                <Chip label={value} variant="standard" />
+              </span>
+            );
+          })}
+          <CardContent>Characteristics: </CardContent>
+          {character.map((value) => {
+            return (
+              <span className="mySpan">
+                <Chip label={value} variant="standard" />
+              </span>
+            );
+          })}
+          <CardActions>
+            <Button
+              className="button"
+              style={{ background: "#a29bb6", color: "aliceblue" }}
+              href={whereTo}
+            >
+              Go To Recipe
+            </Button>
+          </CardActions>
+        </Card>
+      </div>
+    );
+  }
   return (
-    <div className="Hi">
-      <Card className="paper" elevation={4}>
-        <h1>{title}</h1>
-        <img src={image} alt="An image of the desired recipe result." />
-        <h2>Ingredients: </h2>
-        {ingredients.map((value) => {
-          return (
-            <div className="myDiv">
-              <EmojiFoodBeverageIcon></EmojiFoodBeverageIcon>{" "}
-              <Chip label={value} variant="standard" />
-            </div>
-          );
-        })}
-        <h2>Characteristics: </h2>
-        {character.map((value) => {
-          return (
-            <div className="myDiv">
-              <EmojiFoodBeverageIcon></EmojiFoodBeverageIcon>
-              <Chip label={value} variant="standard" />
-            </div>
-          );
-        })}
-      </Card>
-    </div>
+    <span className="recipeListPage">
+      <span>
+        {" "}
+        {createRecipeCard(
+          "Cupcakes",
+          "https://prettysimplesweet.com/wp-content/uploads/2020/07/funfetti-cupcakes-recipe.jpg",
+          ["love", "patience", "sugar"],
+          ["tasty", "easy", "vegan", "baking", "sweet"],
+          "#"
+        )}
+      </span>
+      <span>
+        {" "}
+        {createRecipeCard(
+          "Pasta Puttanesca",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHM_E5TEiRKl2-Dve0fGazvVo1py9-zXJDQw&usqp=CAU",
+          ["tomato", "spaghetti", "basil"],
+          ["vegan", "gluten", "boiling", "pasta"],
+          "#"
+        )}
+      </span>
+      <span>
+        {" "}
+        {createRecipeCard(
+          "Chocolate Pancakes",
+          "https://www.delscookingtwist.com/wp-content/uploads/2021/07/Perfect-Chocolate-Pancakes_1.jpg",
+          ["chocolate", "sugar", "flour", "eggs"],
+          ["contain eggs", "gluten", "breakfast"],
+          "#"
+        )}
+      </span>
+      <span>
+        {" "}
+        {createRecipeCard(
+          "Coffee",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsIEbRh0tn9_1qLMjfQIIwEV0kdfPzwvvViA&usqp=CAU",
+          ["sugar", "coffee", "milk", "water"],
+          ["contain lactose", "gluten", "breakfast"],
+          "#"
+        )}
+      </span>
+      <span>
+        {" "}
+        {createRecipeCard(
+          "Bacon Salad",
+          "https://www.cookingclassy.com/wp-content/uploads/2019/11/best-salad-7.jpg",
+          ["bacon", "lettuce", "croutons"],
+          ["meat", "gluten", "lunch"],
+          "#"
+        )}
+      </span>
+    </span>
   );
 }
