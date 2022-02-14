@@ -68,7 +68,7 @@ export default function Recipe() {
           "Pasta Puttanesca",
           "https://www.twopeasandtheirpod.com/wp-content/uploads/2019/05/Pasta-Primavera-3.jpg",
           ["tomato", "spaghetti", "basil"],
-          ["vegan", "gluten", "boiling", "pasta"],
+          ["vegan", "gluten", "italian", "pasta"],
           "#"
         )}
       </span>
@@ -98,7 +98,7 @@ export default function Recipe() {
           "Bacon Salad",
           "https://www.cookingclassy.com/wp-content/uploads/2019/11/best-salad-7.jpg",
           ["bacon", "lettuce", "croutons"],
-          ["meat", "gluten", "lunch"],
+          ["meat", "salad", "lunch"],
           "#"
         )}
       </span>

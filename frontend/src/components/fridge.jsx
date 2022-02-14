@@ -12,7 +12,7 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import CreateNewIngredient from "./addIngredient.jsx";
 
 export default function IngredientsList() {
-  function createIngredientAccordion(groupName, ingredientsNames) {
+  function createIngredientAccordion(ingredientsNames) {
     return (
       <Grid container justify="center">
         <div className="myAccordion">
@@ -31,7 +31,7 @@ export default function IngredientsList() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <h2>{groupName}</h2>
+              <h2>Ingredients You Have</h2>
             </AccordionSummary>
             <AccordionDetails>
               {ingredientsNames.map((value) => {
@@ -43,6 +43,7 @@ export default function IngredientsList() {
               })}
             </AccordionDetails>
           </Accordion>
+          <Button>Click here to search recipe</Button>
         </div>
       </Grid>
     );
@@ -50,36 +51,15 @@ export default function IngredientsList() {
   return (
     <div>
       <Paper elevation={4}>
-        <h1>Ingredients</h1>{" "}
-        {createIngredientAccordion("Vegetables", [
+        <h1>Fridge: </h1>{" "}
+        {createIngredientAccordion([
           "Cucumber",
-          "Onion",
-          "Tomato",
-          "Carrot",
-          "Lettuce",
-        ])}
-        {createIngredientAccordion("Dairy", [
           "Milk",
-          "Cheese",
-          "Butter",
-          "Yogurt",
-        ])}
-        {createIngredientAccordion("Meat", ["Beef", "Chicken", "Pork"])}
-      </Paper>
-      <Paper elevation={4}>
-        <h1>Characteristics</h1>{" "}
-        {createIngredientAccordion("Vegan", [
-          "Diary",
-          "Meat",
           "Eggs",
-          "Honey",
-          "Gelatin",
+          "Peach",
+          "Beef",
         ])}
-        {createIngredientAccordion("Muslim", ["Pork", "Alcohol"])}
       </Paper>
-      <Button href="addIngredient">
-        <AddCircleOutlineIcon></AddCircleOutlineIcon>
-      </Button>
     </div>
   );
 }
