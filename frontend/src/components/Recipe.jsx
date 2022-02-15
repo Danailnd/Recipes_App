@@ -9,7 +9,7 @@ import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 
 export default function Recipe() {
-  function createRecipeCard(title, image, ingredients, character, whereTo) {
+  function createRecipeCard(title, image, ingredients, whereTo) {
     return (
       <div className="recipeListPage">
         <Card sx={{ bgcolor: "#e9e2fd" }} className="card" elevation={4}>
@@ -23,14 +23,6 @@ export default function Recipe() {
           />
           <CardContent>Ingredients: </CardContent>
           {ingredients.map((value) => {
-            return (
-              <span className="mySpan">
-                <Chip label={value} variant="standard" />
-              </span>
-            );
-          })}
-          <CardContent>Characteristics: </CardContent>
-          {character.map((value) => {
             return (
               <span className="mySpan">
                 <Chip label={value} variant="standard" />
@@ -58,7 +50,6 @@ export default function Recipe() {
           "Cupcakes",
           "https://prettysimplesweet.com/wp-content/uploads/2020/07/funfetti-cupcakes-recipe.jpg",
           ["love", "patience", "sugar"],
-          ["tasty", "easy", "vegan", "baking", "sweet"],
           "#"
         )}
       </span>
@@ -68,7 +59,6 @@ export default function Recipe() {
           "Pasta Puttanesca",
           "https://www.twopeasandtheirpod.com/wp-content/uploads/2019/05/Pasta-Primavera-3.jpg",
           ["tomato", "spaghetti", "basil"],
-          ["vegan", "gluten", "italian", "pasta"],
           "#"
         )}
       </span>
@@ -78,7 +68,6 @@ export default function Recipe() {
           "Chocolate Pancakes",
           "https://www.delscookingtwist.com/wp-content/uploads/2021/07/Perfect-Chocolate-Pancakes_1.jpg",
           ["chocolate", "sugar", "flour", "eggs"],
-          ["contain eggs", "gluten", "breakfast"],
           "#"
         )}
       </span>
@@ -88,7 +77,6 @@ export default function Recipe() {
           "Coffee",
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsIEbRh0tn9_1qLMjfQIIwEV0kdfPzwvvViA&usqp=CAU",
           ["sugar", "coffee", "milk", "water"],
-          ["contain lactose", "gluten", "breakfast"],
           "#"
         )}
       </span>
@@ -98,7 +86,6 @@ export default function Recipe() {
           "Bacon Salad",
           "https://www.cookingclassy.com/wp-content/uploads/2019/11/best-salad-7.jpg",
           ["bacon", "lettuce", "croutons"],
-          ["meat", "salad", "lunch"],
           "#"
         )}
       </span>
@@ -108,7 +95,6 @@ export default function Recipe() {
           "Bacon Salad",
           "https://www.cookingclassy.com/wp-content/uploads/2019/11/best-salad-7.jpg",
           ["bacon", "lettuce", "croutons"],
-          ["meat", "gluten", "lunch"],
           "#"
         )}
       </span>

@@ -1,70 +1,34 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { Button, Paper, TextField } from "@material-ui/core";
 import "./main.css";
-import Checkbox from "@mui/material/Checkbox";
-import Brightness1Icon from "@mui/icons-material/Brightness1";
-import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import CookieIcon from "@mui/icons-material/Cookie";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import CakeIcon from "@mui/icons-material/Cake";
-import CoffeeIcon from "@mui/icons-material/Coffee";
-import EggIcon from "@mui/icons-material/Egg";
-import EggAltIcon from "@mui/icons-material/EggAlt";
-import EmojiFoodBeverageIcon from "@mui/icons-material/EmojiFoodBeverage";
-import FlatwareIcon from "@mui/icons-material/Flatware";
-import LocalDiningIcon from "@mui/icons-material/LocalDining";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Link from "@mui/material/Link";
-
-// import CircleIcon from "@mui/icons-material/Circle";
 
 export default function RecipeCreationMenu() {
-  const input = useRef("");
-  const ingredients = useRef(["", "", "", "", ""]);
   const [counter, setCounter] = useState(["", "", "", "", ""]);
+  const addNewTextField = () => setCounter((prev) => [...prev, ""]);
 
-  function submit() {
-    let result;
-    result = input.current;
-    console.log(result);
-  }
-  function handleTextFieldChange(word) {
-    input.current = word;
-  }
-  function handleIngredientsTextfieldChange(word, index) {
-    console.log(word);
-    console.log(index);
-    let editedIngredients = [...ingredients.current];
-    editedIngredients[index] = word;
-    ingredients.current = editedIngredients;
-  }
-  function addIngredient() {
-    // let Ingredients = [...ingredients, ""];
-    let result = [...ingredients.current, ""];
-    setCounter(result);
-    ingredients.current = result;
-  }
-
-  const onKeyDown = (event) => {
-    if (event.key === "Enter") {
-      submit();
-    }
-    //HIIII
+  const addInputValue = (i, newValue) => {
+    setCounter((prevState) =>
+      prevState.map((value, valueIndex) =>
+        valueIndex === i ? newValue : value
+      )
+    );
   };
-  useEffect(() => {}, [ingredients]);
   function IngredientsCreationMenu() {
-    return counter.map((value, index) => {
+    return counter.map((item, i) => {
       return (
         <div className="myDiv">
           <CookieIcon />
           <TextField
+            key={i}
+            placeholder={`Ingredient ${i}`}
+            value={item}
+            id={i}
+            type="text"
+            onChange={(e) => addInputValue(i, e.target.value)}
             className="textField"
             variant="standard"
-            onChange={(event) =>
-              handleIngredientsTextfieldChange(event.target.value, index)
-            }
           />
         </div>
       );
@@ -75,36 +39,18 @@ export default function RecipeCreationMenu() {
       <Paper className="paper" elevation={4}>
         <div>
           <h2 className="header">Create New Recipe</h2>
-        </div>
-        <div className="myDiv">
           <TextField
+            placeholder={`Name of Food`}
+            type="text"
             className="textField"
-            label="Write a title"
-            variant="outlined"
-            color="primary"
-            onKeyDown={onKeyDown}
-            onChange={(event) => handleTextFieldChange(event.target.value)}
+            variant="standard"
           />
-        </div>
-        <div>
-          <IngredientsCreationMenu />
-          <Button onClick={addIngredient}>
+          {IngredientsCreationMenu()}
+          <Button onClick={addNewTextField}>
             <AddCircleOutlineIcon />
-          </Button>
-        </div>
-        <div className="myDiv">
-          <Button
-            variant="contained"
-            style={{ background: "#E4D9FF" }}
-            className="button"
-            onClick={submit}
-          >
-            SUBMIT
           </Button>
         </div>
       </Paper>
     </>
-    // Hiii
   );
-  //hey (;
 }

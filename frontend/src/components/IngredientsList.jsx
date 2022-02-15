@@ -4,12 +4,10 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-//import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
 import Grid from "@mui/material/Grid";
 import { Paper, Button } from "@material-ui/core";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import CreateNewIngredient from "./addIngredient.jsx";
 
 export default function IngredientsList() {
   function createIngredientAccordion(groupName, ingredientsNames) {
@@ -65,17 +63,6 @@ export default function IngredientsList() {
           "Yogurt",
         ])}
         {createIngredientAccordion("Meat", ["Beef", "Chicken", "Pork"])}
-      </Paper>
-      <Paper elevation={4}>
-        <h1>Characteristics</h1>{" "}
-        {createIngredientAccordion("Vegan", [
-          "Diary",
-          "Meat",
-          "Eggs",
-          "Honey",
-          "Gelatin",
-        ])}
-        {createIngredientAccordion("Muslim", ["Pork", "Alcohol"])}
       </Paper>
       <Button href="addIngredient">
         <AddCircleOutlineIcon></AddCircleOutlineIcon>
