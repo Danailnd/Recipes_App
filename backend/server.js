@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const expressGraphQL = require("express-graphql");
 
 const app = express();
 
