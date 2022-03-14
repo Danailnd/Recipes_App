@@ -21,14 +21,23 @@ const db = mysql2.createConnection({
   database: "test1",
 });
 
-function getAllBooksFromDB() {
+// function sqlExecutor(sql) {
+//   return rdb.query(sql, (err, results) => {
+//     if (err) throw err;
+//     console.log(results);
+//     return results;
+//   });
+// }
+
+const getAllBooksFromDB = () => {
   let sql = "SELECT * FROM ingredients";
-  db.query(sql, (err, results) => {
+  const result = db.query(sql, (err, results) => {
     if (err) throw err;
     console.log(results);
     return results;
   });
-}
+  return result;
+};
 
 const RootQueryType = new GraphQLObjectType({
   name: "Query",
@@ -37,7 +46,9 @@ const RootQueryType = new GraphQLObjectType({
     ingredients: {
       type: graphQLTypes.getIngredientType(),
       description: "A list of all the ingredients",
-      resolve: () => getAllBooksFromDB(),
+      resolve: () => {
+        getAllBooksFromDB();
+      },
     },
 
     // book: {
