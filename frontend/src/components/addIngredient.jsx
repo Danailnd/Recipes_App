@@ -17,35 +17,37 @@ export default function CreateNewIngredient() {
 
   function ingredientForm(type, ingredientName) {
     return (
-      <span className="myNewIngredientPage">
-        <Paper className="newGroup" elevation={4}>
-          <h2>Enter {type} name here: </h2>
-          <TextField
-            value={ingredientName}
-            label="Write here: "
-            variant="outlined"
-          ></TextField>
-          <Stack spacing={3}>
-            <Autocomplete
-              multiple
-              id="tags-outlined"
-              options={groups}
-              getOptionLabel={(option) => option.name}
-              filterSelectedOptions
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="Enter groups it belongs to: "
-                  placeholder="Groups..."
-                />
-              )}
-            />
-          </Stack>
-          <Button sx={{ bgcolor: "#e9e2fd" }} href="IngredientsList">
-            Submit
-          </Button>
-        </Paper>
-      </span>
+      <h3>Hiii</h3>
+
+      // <span className="myNewIngredientPage">
+      //   <Paper className="newGroup" elevation={4}>
+      //     <h2>Enter {type} name here: </h2>
+      //     <TextField
+      //       value={ingredientName}
+      //       label="Write here: "
+      //       variant="outlined"
+      //     ></TextField>
+      //     <Stack spacing={3}>
+      //       <Autocomplete
+      //         multiple
+      //         id="tags-outlined"
+      //         options={groups}
+      //         getOptionLabel={(option) => option.name}
+      //         filterSelectedOptions
+      //         renderInput={(params) => (
+      //           <TextField
+      //             {...params}
+      //             label="Enter groups it belongs to: "
+      //             placeholder="Groups..."
+      //           />
+      //         )}
+      //       />
+      //     </Stack>
+      //     <Button sx={{ bgcolor: "#e9e2fd" }} href="IngredientsList">
+      //       Submit
+      //     </Button>
+      //   </Paper>
+      // </span>
     );
   }
   return <span>{ingredientForm("ingredient", "potato")}</span>;
