@@ -6,6 +6,7 @@ import IngredientsList from "./components/IngredientsList.jsx";
 import Recipe from "./components/Recipe.jsx";
 import CreateNewIngredient from "./components/addIngredient.jsx";
 import Fridge from "./components/fridge.jsx";
+import TestDBGraphQL from "./components/testGraphQL.jsx";
 
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/Recipes" element={<Recipe />} />
           <Route path="/addIngredient" element={<CreateNewIngredient />} />
           <Route path="/fridge" element={<Fridge />} />
+          <Route path="/testGraphQL" element={<TestDBGraphQL />} />
         </Routes>
       </BrowserRouter>
     </>

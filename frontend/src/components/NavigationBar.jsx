@@ -39,6 +39,7 @@ export default function NavigationBar() {
         <Button href="IngredientsList">Ingredients</Button>
         <Button href="Recipes">Recipes</Button>
         <Button href="fridge">Fridge</Button>
+        <Button href="testGraphQL">test GraphQL</Button>
       </Toolbar>
     </AppBar>
   );
