@@ -1,5 +1,6 @@
 const express = require("express");
 const mysql2 = require("mysql2");
+const cors = require("cors");
 
 //Create connection
 const db = mysql2.createConnection({
@@ -45,6 +46,6 @@ app.get("/getposts", (req, res) => {
   });
 });
 
-app.listen("5001", () => {
-  console.log("Server started on port 5001 (testDB)");
+app.listen("5000", () => {
+  console.log("Server started on port 5000 (testDB)");
 });

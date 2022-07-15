@@ -1,24 +1,19 @@
 const express = require("express");
-const mysql2 = require("mysql2");
-const cors = require("cors");
 const expressGraphQL = require("express-graphql").graphqlHTTP;
-
-const {
-  GraphQLSchema,
-  GraphQLObjectType,
-  GraphQLString,
-  GraphQLList,
-  GraphQLInt,
-  GraphQLNonNull,
-} = require("graphql");
-
-const rootQueryType = require("./rootQueryType");
+const schema = require("./Attempt 2 on GraphQL/schema");
+const mongoose = require("mongoose");
+var cors = require("cors");
 
 const app = express();
 
-const schema = new GraphQLSchema({
-  query: rootQueryType.getRootQueryType(),
-  //   mutation: RootMutationType,
+app.use(cors());
+
+mongoose.connect(
+  "mongodb+srv://danailnd:i4UypxQEa2079ZhsYruR@cluster0.52yyx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+);
+
+mongoose.connection.once("open", () => {
+  console.log("Connected to database...");
 });
 
 app.use(
@@ -29,25 +24,6 @@ app.use(
   })
 );
 
-const port = 5000;
-
-app.listen(port, () => console.log(`Server running on port ${port}`));
-
-// const corsOptions = {
-//   origin: "*",
-//   credentials: true, //access-control-allow-credentials:true
-//   optionSuccessStatus: 200,
-// };
-// const customers = [
-//   { id: 1, firstName: "John", lastName: "Doe" },
-//   { id: 2, firstName: "Brad", lastName: "Traversy" },
-//   { id: 3, firstName: "Mary", lastName: "Swanson" },
-// ];
-// app.use(cors(corsOptions));
-
-// app.get("/api/customers", (req, res) => {
-//   res.json(customers);
-// });
-// app.get("/api/customers/:id", (req, res) => {
-//   res.json(customers.filter((member) => member.id === parseInt(req.params.id)));
-// });
+app.listen(5000, () => {
+  console.log("Server started on port 5000...");
+});
