@@ -7,6 +7,7 @@ import Recipe from "./components/Recipe.jsx";
 import CreateNewIngredient from "./components/addIngredient.jsx";
 import Fridge from "./components/fridge.jsx";
 import TestDBGraphQL from "./components/testGraphQL.jsx";
+import TestApollo from "./components/TestApollo";
 
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import {
@@ -16,7 +17,7 @@ import {
   HttpLink,
   from,
 } from "@apollo/client";
-import { onError } from "apollo/client/link/error";
+import { onError } from "@apollo/client/link/error";
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
@@ -38,7 +39,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <>
-      <ApolloProvider client >
+      <ApolloProvider client={client}>
         <NavigationBar />
         <BrowserRouter>
           <Routes>
@@ -49,6 +50,7 @@ function App() {
             <Route path="/addIngredient" element={<CreateNewIngredient />} />
             <Route path="/fridge" element={<Fridge />} />
             <Route path="/testGraphQL" element={<TestDBGraphQL />} />
+            <Route path="/TestApollo" element={<TestApollo />} />
           </Routes>
         </BrowserRouter>
       </ApolloProvider>

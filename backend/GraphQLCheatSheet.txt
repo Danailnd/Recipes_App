@@ -1,0 +1,19 @@
+Generic GraphQL query call:
+{
+  books {
+    name
+    author{
+      name
+      age
+    }
+  }
+}
+
+Generic GraphQL mutation:
+
+mutation{
+  addBook(name: "Random Best Seller", genre: "Random BS", authorId:"623ef7bba26113f1f2310cdf"){
+    name
+    genre
+  }
+}

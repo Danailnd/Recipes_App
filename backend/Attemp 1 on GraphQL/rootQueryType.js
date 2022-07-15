@@ -29,7 +29,7 @@ const db = mysql2.createConnection({
 //   });
 // }
 
-const getAllBooksFromDB = () => {
+function getAllBooksFromDB() {
   let sql = "SELECT * FROM ingredients";
   const result = db.query(sql, (err, results) => {
     if (err) throw err;
@@ -37,7 +37,7 @@ const getAllBooksFromDB = () => {
     return results;
   });
   return result;
-};
+}
 
 const RootQueryType = new GraphQLObjectType({
   name: "Query",
